@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
-                android:hint="Search a word"
+                android:hint="@string/search_a_word"
                 android:textColor="@color/black"
                 android:textColorHint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
