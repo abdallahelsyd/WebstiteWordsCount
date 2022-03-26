@@ -15,6 +15,7 @@
             android:orientation="horizontal"
             android:paddingHorizontal="5dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
@@ -41,14 +42,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <CheckBox
-                android:minHeight="0dp"
-                android:minWidth="0dp"
-                android:button="@null"
-                android:background="@drawable/sort_checkbox"
                 android:id="@+id/cbSort"
-                android:checked="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/sort_checkbox"
+                android:button="@null"
+                android:checked="false"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
                 android:paddingHorizontal="5dp"
                 android:src="@drawable/ic_baseline_sort_inactive"
                 app:layout_constraintBottom_toBottomOf="parent"
