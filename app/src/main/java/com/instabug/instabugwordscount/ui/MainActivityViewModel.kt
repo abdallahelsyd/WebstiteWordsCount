@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.instabug.core.domain.models.Sorting
-import com.instabug.core.domain.models.ViewState
+import com.instabug.instabugwordscount.models.ViewState
 import com.instabug.core.domain.usecases.list.GetListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

@@ -1,5 +1,5 @@
 package com.instabug.instabugwordscount.ui
-import com.instabug.core.domain.models.ViewState
+import com.instabug.instabugwordscount.models.ViewState
 import com.instabug.core.domain.models.WordItem
 
 sealed class WordsListViewState() : ViewState() {

@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.instabug.instabugwordscount.R
 import com.instabug.instabugwordscount.databinding.ActivityMainBinding
 import com.instabug.core.domain.models.Sorting
-import com.instabug.core.domain.models.ViewState
+import com.instabug.instabugwordscount.models.ViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
