@@ -1,9 +1,10 @@
-package com.instabug.websitewordscount.di
+package com.instabug.instabugwordscount.di
 
-import com.instabug.network.Http
-import com.instabug.preferences.general.PrefsStoreImpl
+
 import com.instabug.instabugwordscount.domain.repositories.ContentRepository
 import com.instabug.instabugwordscount.domain.repositories.IContentRepository
+import com.instabug.localprefs.MyPreference
+import com.instabug.localprefs.general.PrefsStoreImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,8 +18,7 @@ object RepositoriesModule {
     @Provides
     @Singleton
     fun provideListRepository(
-        prefsStoreImpl: PrefsStoreImpl,
-        http: Http.Request,
+        myPreference: MyPreference,
     ): IContentRepository =
-        ContentRepository(prefsStoreImpl, http)
+        ContentRepository(myPreference)
 }

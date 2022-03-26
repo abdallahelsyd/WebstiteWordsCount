@@ -5,13 +5,13 @@
       <map>
         <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1675" />
         <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/drawable/ic_baseline_sort_24.xml" value="0.1675" />
-        <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/layout/activity_main.xml" value="0.2741290691033695" />
+        <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/drawable/ic_baseline_sort_active.xml" value="0.1675" />
+        <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/drawable/ic_baseline_sort_inactive.xml" value="0.1675" />
+        <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/drawable/sort_checkbox.xml" value="0.1675" />
+        <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/abdal/StudioProjects/InstabugWordsCount/app/src/main/res/layout/list_item.xml" value="0.25" />
       </map>
     </option>
-  </component>
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/instabug/instabugwordscount/utils/Utils.kt" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

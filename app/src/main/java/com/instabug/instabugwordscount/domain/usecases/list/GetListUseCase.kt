@@ -1,6 +1,7 @@
 package com.instabug.instabugwordscount.domain.usecases.list
 
 import com.instabug.instabugwordscount.domain.models.Sorting
+import com.instabug.instabugwordscount.domain.models.WordItem
 import com.instabug.instabugwordscount.domain.repositories.ContentRepository
 import com.instabug.instabugwordscount.domain.usecases.IUseCase
 import getEachCount
@@ -20,8 +21,8 @@ class GetListUseCase @Inject constructor(private val contentRepository: ContentR
                     val sortedWordsList=success.getEachCount().toList().sortedBy { it.second }
                     onResult(
                         when(params.sortType){
-                            Sorting.Ascending ->  Result.Success(sortedWordsList.toMap())
-                            Sorting.Descending -> Result.Success(sortedWordsList.reversed().toMap())
+                            Sorting.Ascending ->  Result.Success(sortedWordsList.toMap().map { WordItem(it.key,it.value) })
+                            Sorting.Descending -> Result.Success(sortedWordsList.reversed().toMap().map { WordItem(it.key,it.value) })
                         }
                     )
                 }
@@ -34,14 +35,14 @@ class GetListUseCase @Inject constructor(private val contentRepository: ContentR
                     val wordCount= success.getEachCount().toList().sortedBy { it.second }.toMap()[params.query]
                     val oneItemMap= hashMapOf<String,Int>()
                     oneItemMap[params.query] = wordCount?:0
-                    onResult(Result.Success(oneItemMap) )
+                    onResult(Result.Success(oneItemMap.map { WordItem(it.key,it.value) }) )
                 }
             }
         }
     }
     class Params(val sortType: Sorting,val query: String="")
     sealed class Result {
-        class Success(val wordsList:  Map<String, Int>) : Result()
+        data class Success(val wordsList:  List<WordItem>) : Result()
         object NetworkError : Result()
     }
 

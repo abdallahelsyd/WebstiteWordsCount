@@ -64,4 +64,6 @@ dependencies {
 
     // Preferences DataStore
     implementation "androidx.datastore:datastore-preferences:${versions.datastorePreferences}"
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
 }

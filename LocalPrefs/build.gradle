@@ -44,5 +44,6 @@ dependencies {
 
     //Hilt
     implementation "com.google.dagger:hilt-android:${versions.hilt}"
+    testImplementation 'junit:junit:4.12'
     kapt "com.google.dagger:hilt-compiler:${versions.hilt}"
 }
