@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="InstabugWordsCount.app" target="11" />
+      <module name="InstabugWordsCount.Core" target="11" />
       <module name="InstabugWordsCount.LocalPrefs" target="11" />
     </bytecodeTargetLevel>
   </component>

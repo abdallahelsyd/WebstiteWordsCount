@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.instabug.instabugwordscount.databinding.ListItemBinding
-import com.instabug.instabugwordscount.domain.models.WordItem
+import com.instabug.core.domain.models.WordItem
 
 class WordsListAdapter() : ListAdapter<WordItem, WordsListAdapter.WordsViewHolder>(ItemDiffUtil) {
     private object ItemDiffUtil : DiffUtil.ItemCallback<WordItem>() {

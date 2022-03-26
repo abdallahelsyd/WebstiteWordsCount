@@ -1,7 +1,6 @@
 package com.instabug.instabugwordscount.ui
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -11,8 +10,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.instabug.instabugwordscount.R
 import com.instabug.instabugwordscount.databinding.ActivityMainBinding
-import com.instabug.instabugwordscount.domain.models.Sorting
-import com.instabug.instabugwordscount.domain.models.ViewState
+import com.instabug.core.domain.models.Sorting
+import com.instabug.core.domain.models.ViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

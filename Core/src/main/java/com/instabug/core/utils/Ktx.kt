@@ -1,3 +1,5 @@
+package com.instabug.core.utils
+
 fun List<String>.getEachCount() = this.groupingBy { it }.eachCount()
 
 fun String.removePunctuation() =

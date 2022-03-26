@@ -35,6 +35,8 @@ android {
 
 dependencies {
 
+    implementation project(':LocalPrefs')
+    implementation project(':Remote')
     testImplementation "junit:junit:${versions.core}"
 
     implementation "androidx.core:core-ktx:${versions.coreKtx}"

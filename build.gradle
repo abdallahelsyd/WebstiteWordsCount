@@ -4,6 +4,7 @@ buildscript {
 
     ext.versions = [
             // build
+
             'versionCode'                 : 1,
             'versionName'                 : "1.0",
             'minSdk'                      : 21,
@@ -15,6 +16,7 @@ buildscript {
             'gradlePlugin'                : '1.5.30',
 
             // core
+            'core'                        : '4.13.2',
             'coreKtx'                     : '1.7.0',
             'appCompat'                   : '1.4.1',
             'hilt'                        : '2.41',

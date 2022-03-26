@@ -16,3 +16,4 @@ rootProject.name = "InstabugWordsCount"
 include ':app'
 include ':Remote'
 include ':LocalPrefs'
+include ':Core'

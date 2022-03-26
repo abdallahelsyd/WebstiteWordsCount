@@ -3,9 +3,9 @@ package com.instabug.instabugwordscount.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.instabug.instabugwordscount.domain.models.Sorting
-import com.instabug.instabugwordscount.domain.models.ViewState
-import com.instabug.instabugwordscount.domain.usecases.list.GetListUseCase
+import com.instabug.core.domain.models.Sorting
+import com.instabug.core.domain.models.ViewState
+import com.instabug.core.domain.usecases.list.GetListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

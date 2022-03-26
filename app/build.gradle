@@ -39,8 +39,8 @@ android {
 
 dependencies {
 
-    implementation project(':LocalPrefs')
-    implementation project(':Remote')
+    implementation(project(':Core'))
+
 
     implementation "androidx.core:core-ktx:${versions.coreKtx}"
     implementation "androidx.appcompat:appcompat:$versions.appCompat"
