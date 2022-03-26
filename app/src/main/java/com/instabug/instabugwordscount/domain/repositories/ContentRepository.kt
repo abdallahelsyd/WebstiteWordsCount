@@ -1,28 +1,26 @@
-package com.instabug.websitewordscount.domain.repositories
+package com.instabug.instabugwordscount.domain.repositories
 
-import com.google.android.play.core.tasks.Task
-import com.instabug.network.Http
-import com.instabug.network.ResponseListener
-import com.instabug.preferences.general.PrefsStoreImpl
-import kotlinx.coroutines.flow.Flow
+import com.instabug.localprefs.Constants
+import com.instabug.localprefs.MyPreference
+import com.instabug.localprefs.general.PrefsStoreImpl
+import com.instabug.remote.Network
+import removePunctuation
 import javax.inject.Inject
 
 class ContentRepository @Inject constructor(
-    private val prefsStoreImpl: PrefsStoreImpl,
-    private val http:Http.Request
-):IContentRepository {
-    override fun getWebsiteContent(): Flow<String> {
+    private val myPreference: MyPreference
+): IContentRepository {
 
-            http.execute(object :ResponseListener{
-                override fun onResponse(res: Http.Response?) {
+    override fun getWebsiteContent(callback: (success: List<String>, error: String) -> Unit) {
+        val getHtml = Network.get(Constants.STORE_NAME)
+        if (getHtml.isNotEmpty()){
+            myPreference.saveData(getHtml)
+            val words = getHtml.removePunctuation()
+            callback(words,"")
 
-                }
+        }else{
+            callback(emptyList(),"Network Error")
+        }
 
-                override fun onFailure(e: Exception?) {
-                    return
-                }
-
-            } )
-        return prefsStoreImpl.getString()
     }
 }

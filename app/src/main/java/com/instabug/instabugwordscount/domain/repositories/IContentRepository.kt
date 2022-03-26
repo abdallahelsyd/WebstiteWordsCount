@@ -1,9 +1,9 @@
-package com.instabug.websitewordscount.domain.repositories
+package com.instabug.instabugwordscount.domain.repositories
 
 import com.google.android.play.core.tasks.Task
 import kotlinx.coroutines.flow.Flow
 
 
 interface IContentRepository {
-    fun getWebsiteContent(): Flow<String>
+    fun getWebsiteContent(callback:(success:List<String>,error:String)->Unit)
 }

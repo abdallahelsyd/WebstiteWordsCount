@@ -2,8 +2,8 @@ package com.instabug.websitewordscount.di
 
 import com.instabug.network.Http
 import com.instabug.preferences.general.PrefsStoreImpl
-import com.instabug.websitewordscount.domain.repositories.ContentRepository
-import com.instabug.websitewordscount.domain.repositories.IContentRepository
+import com.instabug.instabugwordscount.domain.repositories.ContentRepository
+import com.instabug.instabugwordscount.domain.repositories.IContentRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
