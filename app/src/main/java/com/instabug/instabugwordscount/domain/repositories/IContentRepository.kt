@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface IContentRepository {
-    fun getWebsiteContent(callback:(success:List<String>,error:String)->Unit)
+    fun getWebsiteContent(callback:(success:List<String>,error:Exception?)->Unit)
 }

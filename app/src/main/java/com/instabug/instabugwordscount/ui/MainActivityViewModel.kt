@@ -21,8 +21,14 @@ class MainActivityViewModel @Inject constructor(private val getListUseCase: GetL
         setState(ViewState.Loading)
         getListUseCase.execute(GetListUseCase.Params(Sorting.Descending, ""), onResult = {
             when (it) {
-                GetListUseCase.Result.NetworkError -> setState(ViewState.Error("NetworkError"))
-                is GetListUseCase.Result.Success -> setState(WordsListViewState.OnSuccess(it.wordsList))
+                GetListUseCase.Result.NetworkError -> setState(ViewState.NetworkError(""))
+                is GetListUseCase.Result.Success -> {
+                    if (it.wordsList.isNotEmpty())
+                        setState(WordsListViewState.OnSuccess(it.wordsList))
+                    else
+                        setState(ViewState.Empty)
+                }
+                GetListUseCase.Result.UnknownError -> setState(ViewState.UnknownError)
             }
         })
     }
@@ -37,8 +43,14 @@ class MainActivityViewModel @Inject constructor(private val getListUseCase: GetL
         setState(ViewState.Loading)
         getListUseCase.execute(GetListUseCase.Params(sorting, query), onResult = {
             when (it) {
-                GetListUseCase.Result.NetworkError -> setState(ViewState.Error("NetworkError"))
-                is GetListUseCase.Result.Success -> setState(WordsListViewState.OnSuccess(it.wordsList))
+                GetListUseCase.Result.NetworkError -> setState(ViewState.NetworkError(""))
+                is GetListUseCase.Result.Success -> {
+                    if (it.wordsList.isNotEmpty())
+                        setState(WordsListViewState.OnSuccess(it.wordsList))
+                    else
+                        setState(ViewState.Empty)
+                }
+                GetListUseCase.Result.UnknownError -> setState(ViewState.UnknownError)
             }
         })
     }

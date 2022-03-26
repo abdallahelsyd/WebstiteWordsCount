@@ -9,18 +9,18 @@ import javax.inject.Inject
 class ContentRepository @Inject constructor(
     private val myPreference: MyPreference
 ): IContentRepository {
-    override fun getWebsiteContent(callback: (success: List<String>, error: String) -> Unit) {
-        Network.get(Constants.URL, callback = {htmlText->
+    override fun getWebsiteContent(callback: (success: List<String>, error: Exception?) -> Unit) {
+        Network.get(Constants.URL, callback = {htmlText,e->
             if (htmlText.isNotEmpty()){
                 myPreference.saveData(htmlText)
                 val words = htmlText.removePunctuation()
-                callback(words,"")
+                callback(words,e)
             }else{
                 val localData=myPreference.getData()
                 if (localData.isNotEmpty())
-                    callback(localData.removePunctuation(),"")
+                    callback(localData.removePunctuation(),e)
                 else
-                    callback(emptyList(),"Network Error")
+                    callback(emptyList(),e)
             }
         })
     }

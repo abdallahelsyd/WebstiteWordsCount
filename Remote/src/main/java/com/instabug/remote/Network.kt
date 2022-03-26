@@ -6,12 +6,12 @@ import java.net.URL
 import kotlin.concurrent.thread
 
 object Network {
-    fun get(url: String, callback: (data: String) -> Unit) {
+    fun get(url: String, callback: (data: String,error:Exception?) -> Unit) {
         thread {
             try {
 
-                val url = URL(url)
-                val connection = url.openConnection()
+                val baseUrl = URL(url)
+                val connection = baseUrl.openConnection()
                 var content = ""
                 BufferedReader(InputStreamReader(connection.getInputStream())).use { inp ->
                     var line: String?
@@ -19,10 +19,10 @@ object Network {
                         content += line
                     }
                 }
-                callback(content)
+                callback(content,null)
             } catch (e: Exception) {
                 e.printStackTrace()
-                callback("")
+                callback("",e)
             }
         }
     }

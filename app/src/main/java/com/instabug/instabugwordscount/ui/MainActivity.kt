@@ -1,9 +1,11 @@
 package com.instabug.instabugwordscount.ui
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
@@ -75,9 +77,27 @@ class MainActivity : AppCompatActivity() {
                         wordsListAdapter.notifyDataSetChanged()
                         binder.rvWords.scrollToPosition(0)
                     }
-                    is ViewState.Error->{
+                    is ViewState.NetworkError->{
                         binder.pullToRefresh.isRefreshing=false
                         Toast.makeText(this@MainActivity,"Network Error",Toast.LENGTH_LONG).show()
+                    }
+                    is ViewState.UnknownError->{
+                        Toast.makeText(this@MainActivity,"Unknown Error",Toast.LENGTH_LONG).show()
+                    }
+                    is ViewState.Empty->{
+                        AlertDialog.Builder(this@MainActivity)
+                            .setMessage("can't find this word")
+                            .setCancelable(true)
+                            .setPositiveButton("Retry") { dialog, id ->
+                                viewModel.getData(
+                                    if (binder.cbSort.isChecked)
+                                        Sorting.Descending
+                                    else
+                                        Sorting.Ascending,
+                                    binder.etSearch.text.toString()
+                                )
+                                finish()
+                            }.create().show()
                     }
                 }
             }
